@@ -1,3 +1,4 @@
+
 # 0. Foreword
 Welcome to the online book for learning Arch Linux for Desktop Users! Whether you are trying to learn Arch Linux for academic purposes, to pursue a career or simply looking for a hobby, this book will teach you the basics and the intermediate knowledge. The aim of Arch Linux for Desktop Users is to show how to turn base linux operating system into fully functional desktop in an easy-to-understand fashion.
 
@@ -185,7 +186,7 @@ Yes you can live without them but I call them *Base System Requirements* because
 ## Window Manager
 This is realy depens on personal preferences. In previus chapter, we discussed diffrent types of window managers and some examples for them.
 
-### i3 Gaps 
+## i3 Gaps 
 To make clear, the most (or only) diffrence between *i3* and *i3 gaps* is as it named i3 gaps have gap/space betwen windows. This help *[r/unixporn](reddit.com/r/unixporn/)* comunity to rice better and for us better visual.
 > i3 is a [tiling window manager](https://en.wikipedia.org/wiki/Tiling_window_manager), completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.
 
@@ -194,7 +195,7 @@ but before running X to runing *gui apps* let's install some more tools.
 ## Terminal Emulators
  First, we need an terminal emulator to run run command in gui. We have so many options for chosing terminal emulator. [Here](https://en.wikipedia.org/wiki/List_of_terminal_emulators) is list of all terminal emulators if you are nerd, if not here is some examples and screenshots of them. 
  
- ### Konsole
+### Konsole
  Konsole is KDE's offical terminal emulator. Features 
  * Multiple tabs support
 * Multiple profiles support
@@ -219,7 +220,6 @@ Alacritty is a modern terminal emulator that comes with sensible defaults, but a
 ![GNOME Terminal 3.43 with the theme set to Adwaita-dark](https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/GNOME_Terminal_3.43_Adwaita-dark.png/1280px-GNOME_Terminal_3.43_Adwaita-dark.png)
 
 ###  Xfce4 Terminal
-
 Xfce Terminal is a lightweight and easy to use terminal emulator application with many advanced features including drop down, tabs, unlimited scrolling, full colors, fonts, transparent backgrounds, and more.
 
 [https://docs.xfce.org/apps/terminal/start](https://docs.xfce.org/apps/terminal/start)
@@ -253,33 +253,33 @@ After adding file manager functionality, we can chose right tool to view it. Fil
 ## Downloading Base System Requiments
 Finaly we understand big part of how DE works and we can start installing packages now!
 
-#### Choosing Window Manager
+### Choosing Window Manager
 My pick for Window Manager will be i3-gaps because of easy configuration, custumization and also being lightweight.
 Download i3-gaps by typing:
 	
 	$ pacman -S i3-gaps
 
-#### Choosing Terminal Emulator
+### Choosing Terminal Emulator
 I love xfce's terminal emulator because it's simple yet super custuziable. Download xfce4-terminal by
 	
 	$ pacman -S xfce4-terminal
 
-#### Downloading Web Browser
+### Downloading Web Browser
 After downloading terminal emulator, we can start installing a web browser. Some popular options would be chrome but because of open source and already including in arch's package manager I will use firefox for this. Download Firefox by typing;
 
     $ pacman -S firefox
  
- #### Downloaing Application Launcher
+### Downloading Application Launcher
 We need an application launcher to launch apps. Rofi is popular because of being super configurable and can be use in other panels to *(we will talk about them later on)* Download rofi by typing
 
     $ pacman -S rofi
 
-#### Downloading Command Line Text Editors
+### Downloading Command Line Text Editors
 We can download nano and vim by typing;
 
     $ pacman -S nano vim
 
-#### Downloading File Viewer
+### Downloading File Viewer
 My pick for file manager is again will be xfce's file manager **thunar**. Download thunar by typing;
 
     $ pacman -S thunar
@@ -296,7 +296,7 @@ And finaly don't forget to install file system because if installed, Thunar will
 
     $ pacman -S gvfs
 
-#### Reboot
+### Reboot
 So, finally we install some cruical packages for our system. Now we can reboot to our newly installed system. To do this first we need to exit from `chroot` enviroment. Type;
 
     $ exit
@@ -309,7 +309,7 @@ You should see something like this after rebooting your system,
 ![Login Screen](https://raw.githubusercontent.com/nizamsaltan/arch-linux-for-desktop-users/main/images/boot_after_fresh_install.png)
 Enter your user name and password to login.
 
-### Starting i3
+## Starting i3
 We need configure window manager to perfectly use tools we installed. But first let's run i3 and see what we did so far. Start X by typing
 
     $ startx /usr/bin/i3
@@ -322,10 +322,9 @@ You can see a message shows on our dock/bar `Error: status_command not found or 
 
 In next chapter we will discuss configuring our system to make all packages work with each other.
 
-## TODO: add link to dock section and next chapter
+### TODO: add link to dock section and next chapter
 
-
-﻿# 5. Configuring System
+# 5. Configuring System
 
 ## Configuring i3
 ### Shortcuts for i3
