@@ -1,4 +1,3 @@
-﻿
 # 0. Foreword
 Welcome to the online book for learning Arch Linux for Desktop Users! Whether you are trying to learn Arch Linux for academic purposes, to pursue a career or simply looking for a hobby, this book will teach you the basics and the intermediate knowledge. The aim of Arch Linux for Desktop Users is to show how to turn base linux operating system into fully functional desktop in an easy-to-understand fashion.
 
@@ -7,7 +6,10 @@ Using base an advanced linux distro can be difficult escpecialy for beginners. T
 
 > Quick Note: This book still in progress and there is have some wrong writing fails or unfinished parts. However, the accuracy of the information taught will be checked from several different sources and the sources will be given with links.
 
+
 # 1. Basic Command Line Knowledge
+
+### TODO: Make something more understandable
 
 ./_file_name_ -> file in current directory
 _folder_name_/_another_folder_ -> _folder_ under current directory
@@ -37,6 +39,7 @@ rmdir -> remove empity directory
 rm -> remove file or folder
 `rm -rf /usr/share/unececary_folder` force to remove unececary_folder (can be file too)
 
+
 # 2. Installing Arch Linux  
 So many people would disagree with me about recommending Arch Linux for beginners. But learning the basics of Linux and with a proper guide, it’s relatively simple to use. Everyone’s reason for using Arch Linux is different, just like having various reasons for using Linux. I am using Arch Linux because I want to get as much freedom from Linux, and it also has a great package manager called ‘Pacman’.  
   
@@ -57,76 +60,79 @@ To run built in instalation script type
     archinstall
     
 to terminal. After this you will see a window like this.
-![archinstall script](https://github.com/nizamsaltan/arch_linux_for_desktop_users/blob/main/Screenshot_2023-02-20_11-47-36.png)
+![archinstall script](https://raw.githubusercontent.com/nizamsaltan/arch-linux-for-desktop-users/main/images/archinstall/archinstall_menu.png)
 Let's go over each of them.
 
-**Archinstall language**
+### Archinstall language
 This option is language set for archinstall script. Not system language!
 
-**Keyboard layout**
+### Keyboard layout
 Pick your keyboard layout 
 > hint: you can use '/' key to search
 
-**Locale language**
+### Locale language
 This option is language set for your system.
 
-**Locale encoding**
+### Locale encoding
 Options for encoding texts. Keep it as UTF-8
 
-**Drive(s)**
+### Drive(s)
 Choose wich drive to install linux in your system.
 
-**Disk layout**
+### Disk layout
 Partitioning your disk layout. If you installing Linux along side with other OSs than you would choose 'Select what to do with each individual drive' option to enter partitioning. 
 If you want an clean install choose 'Wipe all selected drives and use a best-effort default partition layout' option. This option asks you to should create seprate partition for home folder. Let's discuss what is /home parition?
 
-### /home Parition
+#### /home Parition
 '/home' is mount point of partition. Which means every files inside your home folder will be stored in diffrent disk parition. Some kinda backup parition. Because when we decided to change our distro or computer, we don't need to copy and save whoole data. because most of our important files is already inside '/home' partition.
 
-**Encription password**
+### Encription password
 This option gives us opurtunity to encript our disk. This is not password of your system! Instead password of your disk. Meaning, password to read data from your disk. This option is useful if you want to encript your disk sepratly from your system. I personaly dont like to use seprate encription for my disk but if you keep important files in your system than this option is highly recommended among community.
 
-**Bootloader**
+### Bootloader
 In order to boot our Linux system, a Linux-capable boot loader must be set up. The boot loader is responsible for loading the kernel and initial ramdisk before initiating the boot process. Archinstall script gives us a default option depending on our system. Best to keep it as default in most of the time. Further read: https://wiki.archlinux.org/title/Arch_boot_process
 
-**Swap**
+### Swap
 Swap space can be used for two purposes, to extend the virtual memory beyond the installed physical memory (RAM), and also for suspend-to-disk support. Highly recommended if you low on RAM resources.
 
-**Hostname**
+### Hostname
 A hostname is a unique name created to identify a machine on a network. You can give whatever you want if you using your home network.
 
-**Root password**
+### Root password
 Password of root. Keep it something that you can remember. 
 
-**User account**
+### User account
 Add users to your system.
+> Tip: It's recommended to add your main account to sudoers group.
+![Adding user account](https://raw.githubusercontent.com/nizamsaltan/arch-linux-for-desktop-users/main/images/archinstall/adding_user.png)
 
-**Profile**
+### Profile
+You can choose the profile of your instalation (ie. Desktop env. or Window Manager etc.). But since will will going to install our Window Manager by ourself, you can choose `xorg` option with your desired graphics card drivers.
+
+### Audio
+In Linux systems, we have 2 option for audio server. These are [PipeWire](https://pipewire.org/) and [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio).  
+
+Audio servers in it self is huge topic, and [Tony Tascioglu](https://www.youtube.com/@TonyTascioglu) has a greate video about this. You can check his video from [here](https://www.youtube.com/watch?v=HxEXMHcwtlI). But overall my personal preference is using PipeWire. 
+
+### Kernels
 // TODO:
-_> xorg | graphics card driver
 
-**Audio**
-// TODO:
-pipewire vs pulseaudio
+### Additional packages
+In this part, we can install some packages to use in our system. If you already choose a Window Manager or a Desktop Enviroment without an terminal emulator or web browser, it's recommended to do it in here. For example we can install Firefox and Xfce4 Terminal Emulator by typing
 
-**Kernels**
-// TODO:
+    firefox xfce4-terminal
 
-**Additional packages**
-// TODO:
-firefox xfce4-terminal
-
-**Network configuration**
+### Network configuration
 Configuration of your network. You have muliple options in hier. Because of we are going to use xorg profile, choose 'manual configuration' option. In hier choose 'Add interface' after this you are going to see available network interfaces. Choose wich interface you want to configure. Then you need to choose mode for your network interface. Best to keep it as 'DHCP' (auto detect) if you don't know your ip address.
 
-**Timezone**
+### Timezone
 Choose your time zone
 > hint: you can use '/' key to search
 
-**Automatic time sync**
+### Automatic time sync
 It's personal preference. But true option would be best for most of us.
 
-**Optional repositories**
+### Optional repositories
 Arch Linux official repositories contain essential and popular software, readily accessible via pacman. They are maintained by package maintainers. 
 Packages in the official repositories are constantly upgraded: when a package is upgraded, its old version is removed from the repository. There are no major Arch releases: each package is upgraded as new versions become available from upstream sources. Each repository is always coherent, i.e. the packages that it hosts always have reciprocally compatible versions. 
 Further read: https://wiki.archlinux.org/title/Official_repositories
@@ -135,88 +141,6 @@ My personal preferance: enable multilib
 ##
 
 After all finaly click install to install Arch Linux in your system. After this you are going to see option for 'Enter chroot' click yes to enter because we need to install some packages.
-
-## Manual Instalation
-
-But first thing first, we need to tell system which keyboard layout we have.  
-  
-### Keyboard Layout  
-If you don’t know your current layout code you can use `localectl list-keymaps` command to list all available layouts, then to select yours use `loadkeys *keymap*` . For example `loadkeys trq` for Turkish Q layout.  
-  
-### Internet Connection  
-If you have ethernet cable connected to your computer (*some virtual machines can use host network. Check your network status with `ping archlinux.org`.*) than you are good to go. If not follow these steps to setup your internet connection over wifi. 
-
-To connect internet, we will use arch's built in tool **iwctl** to get started, type `iwctl` command. You will realize the color of terminal is now changed. Now you can use `help` command to list all functions. To list current devices, type `device list`. If the device or its corresponding adapter is turned off, turn it on:
-
-    $ device _device_ set-property Powered on
-    $ adapter _adapter_ set-property Powered on
-
-Then, to initiate a scan for networks (note that this command will not output anything):
-
-    [iwd]# station _device_ scan
-
-You can then list all available networks:
-
-    [iwd]# station _device_ get-networks
-
-Finally, to connect to a network:
-
-    [iwd]# station _device_ connect _SSID_
-
-    
-
-If a passphrase is required, you will be prompted to enter it. After this you can exit tool by typing `exit`.
-Alternatively, you can supply it as a command line argument:
-
-    $ iwctl --passphrase _passphrase_ station _device_ connect _SSID_
-
-Don't forget to check you connection with `ping archlinux.org` command :-)
-
-### Partitioning  
-Partitioning it self is huge part to consider because everyones needs and stuation is diffrent. If you are installing this alongside with other OS or if you have important files in your disk than I would highly recommend you to backup your data before partitioning.  
-First you should check availiable disks in your system. Use `fdisk -l` command to list all disks and partitions on your system. To partition, I would recommend *cfdisk* rather than base *fdisk*. Go in *cfdisk* UI by typing `cfdisk *your_target_disk*`. Here is and example layout;  
-  
-| Mount point | Partition | [Partition type]([https://en.wikipedia.org/wiki/Partition_type](https://en.wikipedia.org/wiki/Partition_type) "wikipedia:Partition type") | Suggested size |  
-|--|--|--|--|  
-| /boot | /dev/_efi_system_partition_ | [EFI system partition]([https://wiki.archlinux.org/title/EFI_system_partition](https://wiki.archlinux.org/title/EFI_system_partition) "EFI system partition") *(fat32)* | Min 500 MiB. If multiple kernels will be installed, then no less than 1 GiB. |  
-| /swap | /dev/_efi_system_partition_ | Linux Swap| Depends on current system disk. 2 GiB recommended. |
-| / | /dev/_root_partition_ | Linux File System *(ext4)* | 40 GiB recommended. Min of 10 GiB |  
-| /home | /dev/_home_partition_ | Linux File System *(ext4)* | Remaining space |  
-  
-> Boot(/_boot_) and root(/) patitions required to install system using *systemd* boot method  
-  
-We can mount partitions after succesfuly partitioning and formating target disk.  
-  
-### Mounting  
-  
-You can mount partitions using `mount --mkdir /dev/_root_partition_ /mnt` command. For example;  
-  
-- `mount --mkdir /dev/ /mnt/` -> for root partition  
-- `mount --mkdir /dev/home /mnt/home` -> for home partition  
-  
-If you created a [swap]([https://wiki.archlinux.org/title/Swap](https://wiki.archlinux.org/title/Swap) "Swap") volume, enable it with: `swapon /dev/_swap_partition_`  
-  
-### Installation  
-
-#### Select the mirrors  
-  
-Packages to be installed must be downloaded from [mirror servers]([https://wiki.archlinux.org/title/Mirrors](https://wiki.archlinux.org/title/Mirrors) "Mirrors"), which are defined in `/etc/pacman.d/mirrorlist`. On the live system, after connecting to the internet, [reflector]([https://wiki.archlinux.org/title/Reflector](https://wiki.archlinux.org/title/Reflector) "Reflector") updates the mirror list by choosing 20 most recently synchronized HTTPS mirrors and sorting them by download rate.  
-  
-The higher a mirror is placed in the list, the more priority it is given when downloading a package. You may want to inspect the file to see if it is satisfactory. If it is not, [edit]([https://wiki.archlinux.org/title/Textedit](https://wiki.archlinux.org/title/Textedit) "Textedit") the file accordingly, and move the geographically closest mirrors to the top of the list, although other criteria should be taken into account.  
-  
-This file will later be copied to the new system by _pacstrap_, so it is worth getting right.
-
-Şu site ile hazır pacman list ayarlayabilirsiniz
-şu kod ile base linuxu indirebilirsiniz
-###Fstab
-
-Generate an [fstab](https://wiki.archlinux.org/title/Fstab "Fstab") file (use `-U` or `-L` to define by [UUID](https://wiki.archlinux.org/title/UUID "UUID") or labels, respectively):
-
-#genfstab -U /mnt >> /mnt/etc/fstab
-
-Check the resulting `/mnt/etc/fstab` file, and [edit](https://wiki.archlinux.org/title/Textedit "Textedit") it in case of errors.
-
-## [TODO] Keep proccess
 
 
 # 3. Understaning Window Systems in Unix like Systems
@@ -243,6 +167,7 @@ In ist core, window managers handle the placement and appereance of windows on t
 -   [Stacking/Floating](https://wiki.archlinux.org/title/Window_manager#Stacking_window_managers) window managers is the traditional WMs used in commercial operating systems like Windows and macOS. In these WMs windows can be stacked on top of each other. KWin, Sawfish or Openbox is popular options for stacking WMs. 
 -   [Tiling](https://wiki.archlinux.org/title/Window_manager#Tiling_window_managers) window managers "tile" the windows so that none are overlapping. They usually make very extensive use of key-bindings and have less (or no) reliance on the mouse. Tiling window managers may be manual, offer predefined layouts, or both. i3, Qtile or Xmonad is popular options for tiling WMs. 
 -   [Dynamic](https://wiki.archlinux.org/title/Window_manager#Dynamic_window_managers) window managers can switch between floating and tiling window layout.
+
 
 # 4. Base System Requirements
 In order to interact with our computer, we need some basic tools. These are include *Window Manager*, *App launcher* etc. But in this section, don't install tools, this is just introduction to them. You can select them in next part.
@@ -281,21 +206,25 @@ but before running X to runing *gui apps* let's install some more tools.
 
  [https://konsole.kde.org/](https://konsole.kde.org/)
  ![Screenshot of Konsole in KDE Plasma ](https://upload.wikimedia.org/wikipedia/commons/3/38/Konsole_21.12.0_screenshot.png)
+
 ### Alacritty
 Alacritty is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration. By integrating with other applications, rather than reimplementing their functionality, it manages to provide a flexible set of features with high performance. The supported platforms currently consist of BSD, Linux, macOS and Windows.
 
 [https://alacritty.org/](https://alacritty.org/)![Alacritty](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Alacritty-screenshot-with-vim.png/1280px-Alacritty-screenshot-with-vim.png)
+
 ### Gnome Terminal
 **GNOME Terminal** is a terminal emulator for the GNOME written by [Havoc Pennington](https://en.wikipedia.org/wiki/Havoc_Pennington "Havoc Pennington") and others. Terminal emulators allow users to access a UNIX shell while remaining on their graphical desktop.
 
 [https://wiki.gnome.org/Apps/Terminal](https://wiki.gnome.org/Apps/Terminal)
 ![GNOME Terminal 3.43 with the theme set to Adwaita-dark](https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/GNOME_Terminal_3.43_Adwaita-dark.png/1280px-GNOME_Terminal_3.43_Adwaita-dark.png)
+
 ###  Xfce4 Terminal
 
 Xfce Terminal is a lightweight and easy to use terminal emulator application with many advanced features including drop down, tabs, unlimited scrolling, full colors, fonts, transparent backgrounds, and more.
 
 [https://docs.xfce.org/apps/terminal/start](https://docs.xfce.org/apps/terminal/start)
 ![enter image description here](https://camo.githubusercontent.com/48f61a4be8fa223bbf6689cd82bce693a2a4bfbc/68747470733a2f2f7261772e6769746875622e636f6d2f696c6c6172696f6e4b2f6261736531362d78666365342d7465726d696e616c2f6d61737465722f6261736531362d78666365342d7465726d696e616c2e706e67)
+
 ## Application Launcher
 Most popular application launchers are *[DMenu](https://tools.suckless.org/dmenu/)* and *[Rofi](https://github.com/davatorium/rofi)*. dmenu is a dynamic menu for X, originally designed for [dwm](https://dwm.suckless.org/). It manages large numbers of user-defined menu items efficiently. On the other hand Rofi, like dmenu, will provide the user with a textual list of options where one or more can be selected. This can either be running an application, selecting a window, or options provided by an external script.
 
@@ -345,7 +274,7 @@ We need an application launcher to launch apps. Rofi is popular because of being
 
     $ pacman -S rofi
 
- #### Downloading Command Line Text Editors
+#### Downloading Command Line Text Editors
 We can download nano and vim by typing;
 
     $ pacman -S nano vim
@@ -367,8 +296,47 @@ And finaly don't forget to install file system because if installed, Thunar will
 
     $ pacman -S gvfs
 
-### i3 Configuration
+#### Reboot
+So, finally we install some cruical packages for our system. Now we can reboot to our newly installed system. To do this first we need to exit from `chroot` enviroment. Type;
+
+    $ exit
+
+to exit chroot and then reboot your system with;
+
+    $ reboot
+
+You should see something like this after rebooting your system,
+![Login Screen](https://raw.githubusercontent.com/nizamsaltan/arch-linux-for-desktop-users/main/images/boot_after_fresh_install.png)
+Enter your user name and password to login.
+
+### Starting i3
 We need configure window manager to perfectly use tools we installed. But first let's run i3 and see what we did so far. Start X by typing
 
     $ startx /usr/bin/i3
+
+And finally we can see our beatifull GUI like so;
+
+![i3 First Start](https://raw.githubusercontent.com/nizamsaltan/arch-linux-for-desktop-users/main/images/i3_start.png)
+
+You can see a message shows on our dock/bar `Error: status_command not found or is missing a library dependecy`. This is not an important issue for now and we will get those in dock section.
+
+In next chapter we will discuss configuring our system to make all packages work with each other.
+
+## TODO: add link to dock section and next chapter
+
+
+﻿# 5. Configuring System
+
+## Configuring i3
+### Shortcuts for i3
+### Launching apps / running commands with custom shortcuts
+
+## Configuring Rofi
+
+## System Docks/Bars
+### i3bar
+### Polybar
+
+### Configuring i3bar
+### Configuring Polybar
 
