@@ -1,0 +1,15 @@
+# night light
+pacman -S redshift
+redshift -P -O *TEMPERATURE* // usage
+redshift -P -O 6500 // standart temp
+redshift -P -O 4500
+
+# volume controll by keyboard 
+bindsym XF86AudioRaiseVolume exec pamixer -i 5 #to increase 5% && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec pamixer -d 5 #to decrease 5% && pkill -RTMIN+1 i3blocks
+pacman -S pamixer
+
+# screen brightness
+yay -S illum-git
+systemctl enable illum.service
+systemctl start illum.service
