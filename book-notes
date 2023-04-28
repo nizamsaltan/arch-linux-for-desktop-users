@@ -19,3 +19,7 @@ systemctl start illum.service
 # laptop speaker problem
 https://unix.stackexchange.com/questions/710937/arch-linux-on-laptop-no-audio-from-speakers-headphones-work-fine
 sudo pacman -S sof-firmware
+
+# laptop touch input
+https://github.com/JoseExposito/touchegg
+https://github.com/NayamAmarshe/ToucheggKDE
