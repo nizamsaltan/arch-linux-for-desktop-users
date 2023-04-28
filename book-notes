@@ -13,3 +13,9 @@ pacman -S pamixer
 yay -S illum-git
 systemctl enable illum.service
 systemctl start illum.service
+
+
+
+# laptop speaker problem
+https://unix.stackexchange.com/questions/710937/arch-linux-on-laptop-no-audio-from-speakers-headphones-work-fine
+sudo pacman -S sof-firmware
