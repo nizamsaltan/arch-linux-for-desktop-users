@@ -1,5 +1,0 @@
-# Printing
-sudo pacman -S cups cus-pdf
-sudo systemctl enable cups.service
-sudo systemctl start cups.service
-
