@@ -23,3 +23,8 @@ sudo pacman -S sof-firmware
 # laptop touch input
 https://github.com/JoseExposito/touchegg
 https://github.com/NayamAmarshe/ToucheggKDE
+
+# Printing
+sudo pacman -S cups cus-pdf
+sudo systemctl enable cups.service
+sudo systemctl start cups.service
